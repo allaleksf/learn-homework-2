@@ -32,5 +32,14 @@ def main():
     with open("/Users/filatov1-av/Downloads/list1.txt", "w", encoding="utf-8") as file:
         json.dump(CV_list, file)
 
+    import csv
+
+    with open("/Users/filatov1-av/Downloads/list2.csv", "w", encoding="utf-8", newline='') as f2:
+        fields = ['name', 'age', 'job', 'position']
+        writer = csv.DictWriter(f2, fields, delimiter=';')
+        writer.writeheader()
+        for user in CV_list:
+            writer.writerow(user)
+
 if __name__ == "__main__":
     main()
