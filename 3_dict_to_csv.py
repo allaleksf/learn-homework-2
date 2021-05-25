@@ -15,18 +15,22 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    name_dict ={"name":"Ivan","name":"Sergey"}
-    age_dict = {"age":"18", "age":"21","age":"30","age":"40" }
-    job_dict = {"job":"bank","job":"FMCG","job":"Gov","job":"less"}
-    position_dict = {"position":"manager","position":"director","position":"out staff"}
+    first_mem ={"name":"Ivan","age":"18","job":"bank","position":"manager"}
+    sec_mem = {"name":"Peter","age":"28","job":"FMCG","position":"director"}
+    thi_mem = {"name":"Serg","age":"38","job":"GOV","position":"head of"}
+    fou_mem = {"name":"Alex","age":"100","job":"IP","position":"self emploed"}
 
     CV_list = []
-    CV_list.append(name_dict)
-    CV_list.append(age_dict)
-    CV_list.append(job_dict)
-    CV_list.append(position_dict)
+    CV_list.append(first_mem)
+    CV_list.append(sec_mem)
+    CV_list.append(thi_mem)
+    CV_list.append(fou_mem)
 
-    print(CV_list)
+
+    import json
+
+    with open("/Users/filatov1-av/Downloads/list1.txt", "w", encoding="utf-8") as file:
+        json.dump(CV_list, file)
 
 if __name__ == "__main__":
     main()
